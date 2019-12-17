@@ -15,6 +15,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.beanutils.FluentPropertyBeanIntrospector;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.jeecg.common.constant.CommonConstant;
 import org.jeecg.common.system.util.JeecgDataAutorUtils;
@@ -31,6 +32,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class QueryGenerator {
+	static {
+		PropertyUtils.addBeanIntrospector(new FluentPropertyBeanIntrospector());
+	}
 	
 	public static final String SQL_RULES_COLUMN = "SQL_RULES_COLUMN";
 
